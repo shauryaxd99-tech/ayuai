@@ -1,0 +1,233 @@
+/* ===== BASE ===== */
+body {
+  margin:0;
+  background:#0f172a;
+  color:white;
+  font-family:system-ui;
+}
+
+/* Layout */
+.app {
+  display:flex;
+  height:100vh;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+  width:240px;
+  background:#020617;
+  padding:15px;
+  border-right:1px solid #1e293b;
+}
+
+.new-btn {
+  width:100%;
+  padding:12px;
+  background:#1e293b;
+  border:none;
+  color:white;
+  border-radius:10px;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.new-btn:hover {
+  background:#334155;
+}
+
+/* ===== CHAT ===== */
+.chat {
+  flex:1;
+  display:flex;
+  flex-direction:column;
+}
+
+/* ===== TOPBAR ===== */
+.topbar {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 20px;
+  border-bottom:1px solid #1e293b;
+  background:#020617;
+}
+
+.logo {
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.logo img {
+  width:35px;
+  height:35px;
+  border-radius:8px;
+}
+
+/* ===== MODE BUTTONS ===== */
+.mode-buttons {
+  display:flex;
+  gap:8px;
+}
+
+.mode-btn {
+  width:38px;
+  height:38px;
+  border-radius:10px;
+  border:none;
+  background:#1e293b;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.mode-btn:hover {
+  background:#334155;
+}
+
+/* ===== MESSAGES ===== */
+#messages {
+  flex:1;
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+  overflow-y:auto;
+}
+
+/* Message bubble */
+.msg {
+  padding:14px 18px;
+  border-radius:16px;
+  max-width:70%;
+  line-height:1.6;
+  font-size:15px;
+  word-wrap:break-word;
+  white-space:pre-wrap;
+  animation:fadeIn 0.2s ease;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity:0; transform:translateY(5px); }
+  to { opacity:1; transform:translateY(0); }
+}
+
+/* User message */
+.user-msg {
+  background:#2563eb;
+  align-self:flex-end;
+}
+
+/* AI message */
+.bot-msg {
+  background:#1e293b;
+  align-self:flex-start;
+}
+
+/* ===== INPUT AREA ===== */
+.input-box {
+  display:flex;
+  align-items:center;
+  padding:12px;
+  background:#020617;
+  border-top:1px solid #1e293b;
+}
+
+.input-box input {
+  flex:1;
+  padding:12px;
+  border:none;
+  border-radius:12px;
+  background:#111827;
+  color:white;
+  outline:none;
+  font-size:14px;
+}
+
+.input-box input::placeholder {
+  color:#94a3b8;
+}
+
+/* ===== ICON BUTTONS ===== */
+.send-btn,
+.mic-btn {
+  width:42px;
+  height:42px;
+  margin-left:10px;
+  border:none;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+/* Send */
+.send-btn {
+  background:#2563eb;
+}
+
+.send-btn:hover {
+  background:#1d4ed8;
+}
+
+/* Mic */
+.mic-btn {
+  background:#1e293b;
+}
+
+.mic-btn:hover {
+  background:#334155;
+}
+
+/* Icons */
+.material-icons {
+  font-size:20px;
+}
+
+/* ===== MODE COLORS ===== */
+body.efficient {
+  background:#0f172a;
+}
+
+body.smart {
+  background:#020617;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width:768px){
+
+  .sidebar {
+    display:none;
+  }
+
+  .app {
+    flex-direction:column;
+  }
+
+  .msg {
+    max-width:90%;
+    font-size:14px;
+  }
+
+  #messages {
+    padding:15px;
+  }
+
+  .input-box {
+    padding:10px;
+  }
+
+  .input-box input {
+    padding:10px;
+  }
+
+  .logo span {
+    font-size:14px;
+  }
+}
